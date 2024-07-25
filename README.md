@@ -1,6 +1,6 @@
 # Creatyum Web Magazine Blog
 
-<div align="center"><img src="./public/cover.jpg"><br></div>
+<div align="center"><img src="./public/cover.jpg"><p></p></div>
 
 <div align="center">
 
