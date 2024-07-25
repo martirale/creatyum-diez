@@ -5,6 +5,10 @@ module.exports = {
   ],
   darkMode: 'media',
   theme: {
+    colors: {
+      yellow: '#ffe000',
+      black: '#000000',
+    },
     extend: {},
   },
   plugins: [],
