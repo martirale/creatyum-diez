@@ -1,4 +1,6 @@
-# Creatyum Media
+# Creatyum Web Magazine Blog
+
+<div align="center"><img src="./public/cover.jpg"></div>
 
 <div align="center">
 
