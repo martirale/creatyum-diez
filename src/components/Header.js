@@ -5,7 +5,9 @@ export default function Header() {
     <header className="bg-yellow text-black dark:bg-black dark:text-yellow p-6">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-lg font-bold">
-          <Link href="/">Logo</Link>
+          <Link href="/">
+            <div className="logo"></div>
+          </Link>
         </div>
         <nav>
           <ul className="flex space-x-4">

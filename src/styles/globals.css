@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --logo: url("/creatyum-logo-k.svg");
+  --logo-icon: url("/creatyum-icon-k.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --logo: url("/creatyum-logo-y.svg");
+    --logo-icon: url("/creatyum-icon-y.svg");
+  }
+}
+
+/* LOGO & ICON */
+.logo {
+  background-image: var(--logo);
+  width: 114px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.logo-icon {
+  background-image: var(--logo-icon);
+  width: 64px;
+  height: 64px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 159px;
+    height: 55px;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
