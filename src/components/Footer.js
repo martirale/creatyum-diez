@@ -22,10 +22,7 @@ export default function Footer() {
           <Link href="/about" className="text-lg hover:underline md:text-base">
             About
           </Link>
-          <Link
-            href="/collabs"
-            className="text-lg hover:underline md:text-base"
-          >
+          <Link href="/" className="text-lg hover:underline md:text-base">
             Colaboraciones
           </Link>
           <Link
@@ -36,7 +33,16 @@ export default function Footer() {
           </Link>
         </div>
         <div className="text-sm p-12 text-center md:flex md:items-center md:text-base md:p-0">
-          <p>Creatyum &copy; 2024 una marca de Alejandro Mártir</p>
+          <p>
+            Creatyum &copy; 2024 una marca de{" "}
+            <a
+              href="https://alemartir.com"
+              target="_blank"
+              className="hover:underline"
+            >
+              Alejandro Mártir
+            </a>
+          </p>
         </div>
       </div>
     </footer>
