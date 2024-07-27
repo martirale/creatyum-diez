@@ -23,7 +23,7 @@ export default function Footer() {
             About
           </Link>
           <Link
-            href="/collaborations"
+            href="/collabs"
             className="text-lg hover:underline md:text-base"
           >
             Colaboraciones
