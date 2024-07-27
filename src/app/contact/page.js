@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Contacto — Creatyum Media",
+  description: "Revista digital para diseñadores y creativos en Latam.",
+};
+
 export default function Contact() {
   return (
     <div>

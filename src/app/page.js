@@ -1,10 +1,13 @@
-import Image from "next/image";
-import styles from "../styles/page.module.css";
+export const metadata = {
+  title: "Creatyum Media",
+  description: "Revista digital para diseñadores y creativos en Latam.",
+};
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-
-    </main>
+    <div>
+      <h1>Creatyum Media</h1>
+      <p>Revista digital para diseñadores y creativos en Latam.</p>
+    </div>
   );
 }
