@@ -18,7 +18,7 @@
   }
 }
 
-/* LOGO & ICON */
+/* LOGO-ICON */
 .logo {
   background-image: var(--logo);
   width: 114px;
@@ -35,6 +35,19 @@
   background-repeat: no-repeat;
 }
 
+@media (min-width: 768px) {
+  .logo {
+    width: 159px;
+    height: 55px;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* NAVBAR */
 .navbar-open {
   background-image: var(--navbar-open);
   width: 24px;
@@ -50,16 +63,4 @@
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: -8px;
-}
-
-@media (min-width: 768px) {
-  .logo {
-    width: 159px;
-    height: 55px;
-  }
-
-  .logo-icon {
-    width: 32px;
-    height: 32px;
-  }
 }
