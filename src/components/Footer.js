@@ -32,15 +32,15 @@ export default function Footer() {
             Contacto
           </Link>
         </div>
-        <div className="text-sm p-12 text-center md:flex md:items-center md:text-base md:p-0">
+        <div className="text-xs p-12 text-center md:flex md:items-center md:p-0">
           <p>
-            Creatyum &copy; 2024 una marca de{" "}
+            &copy; COPYRIGHT 2024{" "}
             <a
               href="https://alemartir.com"
               target="_blank"
               className="hover:underline"
             >
-              Alejandro Mártir
+              ALEJANDRO MÁRTIR
             </a>
           </p>
         </div>
