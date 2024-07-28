@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import { Roboto, SpaceMono } from "@/components/customFonts";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -10,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className="bg-yellow text-black dark:bg-black dark:text-yellow">
+      <body
+        className={`${Roboto.variable} ${SpaceMono.variable} font-Roboto font-light bg-yellow text-black dark:bg-black dark:text-yellow`}
+      >
         <Header />
         <main className="container mx-auto p-4">{children}</main>
         <Footer />
