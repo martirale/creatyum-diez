@@ -22,7 +22,10 @@ export default function Footer() {
           <Link href="/about" className="text-lg hover:underline md:text-base">
             About
           </Link>
-          <Link href="/" className="text-lg hover:underline md:text-base">
+          <Link
+            href="/collabs"
+            className="text-lg hover:underline md:text-base"
+          >
             Colaboraciones
           </Link>
           <Link
