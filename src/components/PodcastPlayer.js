@@ -29,9 +29,14 @@ const PodcastPlayer = () => {
       <div className="space-y-4">
         {episodes.map((episode) => (
           <div key={episode.guid} className="p-4 border rounded-lg shadow">
+            <img
+              src={episode.itunes.image}
+              alt={episode.title}
+              className="w-full h-48 object-cover mb-4 rounded-lg"
+            />
             <h3 className="text-xl font-semibold">{episode.title}</h3>
             <p className="text-gray-700">{episode.contentSnippet}</p>
-            <audio controls className="w-full mt-2">
+            <audio controls className="w-full mt-4">
               <source src={episode.enclosure.url} type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
