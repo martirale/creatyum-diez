@@ -1,4 +1,4 @@
-import Timeline from "../components/Timeline.js";
+import Timeline from "@/components/Timeline.js";
 
 export const metadata = {
   title: "Creatyum Media",
