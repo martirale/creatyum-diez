@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { Roboto, SpaceMono } from "@/components/customFonts";
+import { Roboto, SpaceMono } from "@/components/CustomFonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
