@@ -1,4 +1,4 @@
-# Creatyum Web Magazine Blog
+# Creatyum Web 10 Aniversary
 
 <div align="center"><img src="./public/cover.jpg"><p></p></div>
 
