@@ -71,7 +71,7 @@ export default function Timeline() {
                   <time className="text-xs tracking-wide uppercase">
                     {new Date(event.date).toLocaleDateString("es-ES", {
                       year: "numeric",
-                      month: "short",
+                      month: "long",
                     })}
                   </time>
                   <p className="mt-3">{event.description}</p>
