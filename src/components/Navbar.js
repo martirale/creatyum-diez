@@ -39,7 +39,7 @@ export default function Navbar() {
 
         <div className={getMenuClasses()}>
           <Link href="/" className="text-2xl mx-2 hover:underline md:pl-4">
-            Artículos
+            Inicio
           </Link>
           <Link
             href="/podcast"

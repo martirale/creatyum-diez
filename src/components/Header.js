@@ -1,9 +1,9 @@
 "use client";
-import Navbar from "../components/Navbar.js";
+import Navbar from "@/components/Navbar.js";
 
 export default function Header() {
   return (
-    <header className="fixed w-full bg-yellow text-black dark:bg-black dark:text-yellow p-6">
+    <header className="fixed w-full p-6 bg-yellow text-black dark:bg-black dark:text-yellow z-50">
       <Navbar />
     </header>
   );

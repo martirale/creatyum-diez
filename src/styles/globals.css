@@ -28,6 +28,10 @@ h6 {
   font-family: var(--font-spacemono);
 }
 
+h1 {
+  display: none;
+}
+
 /* LOGO-ICON */
 .logo {
   background-image: var(--logo);
