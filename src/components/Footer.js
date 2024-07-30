@@ -37,7 +37,7 @@ export default function Footer() {
               target="_blank"
               className="hover:underline"
             >
-              ALEJANDRO MÁRTIR
+              AM
             </a>
           </p>
         </div>
