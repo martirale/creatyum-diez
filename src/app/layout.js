@@ -15,7 +15,8 @@ export default function RootLayout({ children }) {
         className={`${Roboto.variable} ${SpaceMono.variable} font-Roboto font-light bg-yellow text-black dark:bg-black dark:text-yellow`}
       >
         <Header />
-        <main className="container mx-auto p-4">{children}</main>
+
+        <main className="container mx-auto p-4 pt-24 md:pt-28">{children}</main>
         <Footer />
       </body>
     </html>
