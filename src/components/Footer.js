@@ -11,7 +11,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col text-center md:flex-row md:items-center space-y-5 md:space-y-0 md:space-x-8 mb-4 md:mb-0">
           <Link href="/" className="text-lg hover:underline md:text-base">
-            Artículos
+            Inicio
           </Link>
           <Link
             href="/podcast"
@@ -26,13 +26,7 @@ export default function Footer() {
             href="/collabs"
             className="text-lg hover:underline md:text-base"
           >
-            Colaboraciones
-          </Link>
-          <Link
-            href="/contact"
-            className="text-lg hover:underline md:text-base"
-          >
-            Contacto
+            Colabos
           </Link>
         </div>
         <div className="text-xs p-12 text-center md:flex md:items-center md:p-0">
