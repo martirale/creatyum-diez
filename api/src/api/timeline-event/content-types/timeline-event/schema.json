@@ -4,7 +4,8 @@
   "info": {
     "singularName": "timeline-event",
     "pluralName": "timeline-events",
-    "displayName": "Timeline Event"
+    "displayName": "Timeline Event",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,7 +21,8 @@
       "required": true
     },
     "description": {
-      "type": "blocks"
+      "type": "richtext",
+      "required": true
     }
   }
 }

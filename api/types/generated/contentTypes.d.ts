@@ -368,6 +368,7 @@ export interface ApiTimelineEventTimelineEvent extends Schema.CollectionType {
     singularName: 'timeline-event';
     pluralName: 'timeline-events';
     displayName: 'Timeline Event';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -375,7 +376,7 @@ export interface ApiTimelineEventTimelineEvent extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     date: Attribute.Date & Attribute.Required;
-    description: Attribute.Blocks;
+    description: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
