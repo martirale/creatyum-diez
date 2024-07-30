@@ -16,7 +16,9 @@ export default function Timeline() {
             id: event.id,
             title: event.attributes.title,
             date: event.attributes.date,
-            description: event.attributes.description,
+            description: event.attributes.description
+              .map((desc) => desc.children.map((child) => child.text).join(" "))
+              .join("\n"),
           }));
           setEvents(formattedEvents);
         } else {

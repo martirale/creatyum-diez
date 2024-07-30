@@ -376,7 +376,7 @@ export interface ApiTimelineEventTimelineEvent extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     date: Attribute.Date & Attribute.Required;
-    description: Attribute.RichText & Attribute.Required;
+    description: Attribute.Blocks & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
