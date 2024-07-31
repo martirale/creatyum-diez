@@ -5,16 +5,12 @@
 :root {
   --logo: url("/creatyum-logo-k.svg");
   --logo-icon: url("/creatyum-icon-k.svg");
-  --navbar-open: url("/icons/hamburger-k.svg");
-  --navbar-close: url("/icons/close-k.svg");
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --logo: url("/creatyum-logo-y.svg");
     --logo-icon: url("/creatyum-icon-y.svg");
-    --navbar-open: url("/icons/hamburger-y.svg");
-    --navbar-close: url("/icons/close-y.svg");
   }
 }
 

@@ -39,13 +39,9 @@ export default function Footer() {
     if (theme === "dark") {
       root.style.setProperty("--logo", "url('/creatyum-logo-y.svg')");
       root.style.setProperty("--logo-icon", "url('/creatyum-icon-y.svg')");
-      root.style.setProperty("--navbar-open", "url('/icons/hamburger-y.svg')");
-      root.style.setProperty("--navbar-close", "url('/icons/close-y.svg')");
     } else {
       root.style.setProperty("--logo", "url('/creatyum-logo-k.svg')");
       root.style.setProperty("--logo-icon", "url('/creatyum-icon-k.svg')");
-      root.style.setProperty("--navbar-open", "url('/icons/hamburger-k.svg')");
-      root.style.setProperty("--navbar-close", "url('/icons/close-k.svg')");
     }
   };
 
@@ -81,9 +77,15 @@ export default function Footer() {
           </Link>
           <button onClick={toggleTheme} className="ml-4 focus:outline-none">
             {theme === "dark" ? (
-              <FontAwesomeIcon icon={faSun} className="text-yellow" />
+              <FontAwesomeIcon
+                icon={faSun}
+                className="text-yellow text-2xl md:text-base"
+              />
             ) : (
-              <FontAwesomeIcon icon={faMoon} className="text-black" />
+              <FontAwesomeIcon
+                icon={faMoon}
+                className="text-black text-2xl md:text-base"
+              />
             )}
           </button>
         </div>

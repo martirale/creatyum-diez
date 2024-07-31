@@ -1,4 +1,6 @@
 "use client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBarsStaggered, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -62,9 +64,15 @@ export default function Navbar() {
             }}
           >
             {isOpen ? (
-              <div className="navbar-close"></div>
+              <FontAwesomeIcon
+                icon={faXmark}
+                className="text-black text-2xl dark:text-yellow"
+              />
             ) : (
-              <div className="navbar-open"></div>
+              <FontAwesomeIcon
+                icon={faBarsStaggered}
+                className="text-black text-xl dark:text-yellow"
+              />
             )}
           </button>
         </div>
