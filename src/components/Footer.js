@@ -10,8 +10,8 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex flex-col text-center md:flex-row md:items-center space-y-5 md:space-y-0 md:space-x-8 mb-4 md:mb-0">
-          <Link href="/" className="text-lg hover:underline md:text-base">
-            Inicio
+          <Link href="/about" className="text-lg hover:underline md:text-base">
+            About
           </Link>
           <Link
             href="/podcast"
@@ -19,8 +19,11 @@ export default function Footer() {
           >
             Podcast
           </Link>
-          <Link href="/about" className="text-lg hover:underline md:text-base">
-            About
+          <Link
+            href="/timeline"
+            className="text-lg hover:underline md:text-base"
+          >
+            Timeline
           </Link>
           <Link
             href="/collabs"

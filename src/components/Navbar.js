@@ -47,6 +47,12 @@ export default function Navbar() {
           >
             Podcast
           </Link>
+          <Link
+            href="/timeline"
+            className="text-2xl mx-2 hover:underline md:pl-4"
+          >
+            Timeline
+          </Link>
         </div>
 
         <div className="flex items-center md:hidden">
