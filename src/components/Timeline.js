@@ -10,7 +10,12 @@ export default function Timeline() {
     async function fetchEvents() {
       try {
         const res = await fetch(
-          "https://dashboard.creatyum.com/api/timeline-events"
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/timeline-events`,
+          {
+            headers: {
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
+            },
+          }
         );
         if (res.ok) {
           const data = await res.json();
