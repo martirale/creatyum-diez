@@ -6,7 +6,7 @@ module.exports = {
     "./node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "media",
+  darkMode: "class",
   theme: {
     colors: {
       yellow: "#ffe000",
