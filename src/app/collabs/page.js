@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Colaboracioness — Creatyum Media",
+  title: "Colaboraciones — Creatyum Media",
   description: "Revista digital para diseñadores y creativos en Latam.",
 };
 
