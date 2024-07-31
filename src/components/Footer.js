@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-yellow text-black dark:bg-black dark:text-yellow p-6 mt-8">
+    <footer className="bg-yellow border-t-black border-t-[1px] text-black dark:bg-black dark:border-t-yellow dark:border-t-[1px] dark:text-yellow p-6 mt-8">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="flex items-center mb-16 md:mb-0">
+        <div className="flex items-center mt-16 mb-16 md:mt-0 md:mb-0">
           <Link href="/">
             <div className="logo-icon"></div>
           </Link>
