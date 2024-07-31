@@ -9,7 +9,9 @@ export default function Timeline() {
   useEffect(() => {
     async function fetchEvents() {
       try {
-        const res = await fetch("http://localhost:1337/api/timeline-events");
+        const res = await fetch(
+          "https://dashboard.creatyum.com/api/timeline-events"
+        );
         if (res.ok) {
           const data = await res.json();
           const formattedEvents = data.data.map((event) => ({
