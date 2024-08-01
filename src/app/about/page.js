@@ -93,6 +93,20 @@ export default function AboutPage() {
                   </blockquote>
                 );
               }
+              if (block.type === "list") {
+                const ListTag = block.format === "ordered" ? "ol" : "ul";
+                const listClass =
+                  block.format === "ordered"
+                    ? "list-decimal pl-6"
+                    : "list-disc pl-6";
+                return (
+                  <ListTag key={index} className={listClass}>
+                    {block.children.map((item, itemIndex) => (
+                      <li key={itemIndex}>{formatText(item.children)}</li>
+                    ))}
+                  </ListTag>
+                );
+              }
               return null;
             }
           );
