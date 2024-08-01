@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function About() {
+export default function AboutPage() {
   const [aboutContent, setAboutContent] = useState([]);
   const [missionContent, setMissionContent] = useState("");
   const [loading, setLoading] = useState(true);
@@ -31,12 +31,70 @@ export default function About() {
           const dataAbout = await resAbout.json();
           const dataMission = await resMission.json();
 
+          const formatText = (children) => {
+            return children.map((child, index) => {
+              if (child.type === "text") {
+                let text = child.text;
+                if (child.bold) text = <b key={index}>{text}</b>;
+                if (child.italic) text = <em key={index}>{text}</em>;
+                return text;
+              }
+              if (child.type === "link") {
+                return (
+                  <a
+                    href={child.url}
+                    key={index}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    {formatText(child.children)}
+                  </a>
+                );
+              }
+              return null;
+            });
+          };
+
           const formattedAbout = dataAbout.data.attributes.about.map(
-            (para, index) => (
-              <p key={index} className="mb-4">
-                {para.children.map((child) => child.text).join(" ")}
-              </p>
-            )
+            (block, index) => {
+              if (block.type === "paragraph") {
+                return (
+                  <p key={index} className="mb-4">
+                    {formatText(block.children)}
+                  </p>
+                );
+              }
+              if (block.type === "image") {
+                return (
+                  <img
+                    key={index}
+                    src={block.image.url}
+                    alt={block.image.alternativeText || ""}
+                    className="my-4 max-w-full h-auto"
+                  />
+                );
+              }
+              if (block.type === "heading") {
+                const HeadingTag = `h${block.level}`;
+                return (
+                  <HeadingTag key={index} className="text-2xl my-4 md:text-3xl">
+                    {formatText(block.children)}
+                  </HeadingTag>
+                );
+              }
+              if (block.type === "quote") {
+                return (
+                  <blockquote
+                    key={index}
+                    className="border-l-4 border-black italic pl-4 my-4"
+                  >
+                    {formatText(block.children)}
+                  </blockquote>
+                );
+              }
+              return null;
+            }
           );
 
           const formattedMission = <p>{dataMission.data.attributes.mission}</p>;
@@ -78,7 +136,7 @@ export default function About() {
 
         <div className="col-span-12 md:col-span-3">
           <div className="border border-solid border-black p-8 dark:border-yellow">
-            <h2 className="text-3xl mb-4">Misión</h2>
+            <h3 className="text-3xl mb-4">Misión</h3>
             {missionContent}
           </div>
         </div>
