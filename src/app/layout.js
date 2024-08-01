@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
 
-        <main className="container mx-auto p-4 pt-24 md:pt-28">{children}</main>
+        <main className="container mx-auto pt-24 md:pt-28">{children}</main>
         <Footer />
       </body>
     </html>
