@@ -28,22 +28,27 @@ const PodcastPlayer = () => {
   }, []);
 
   return (
-    <section className="container mx-auto p-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <section className="container mx-auto px-8 py-8 md:px-0">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {episodes.map((episode) => (
-          <div key={episode.guid} className="bg-white shadow-md rounded-lg p-4">
-            <div className="w-100 h-100 mb-4 overflow-hidden rounded-lg">
+          <div
+            key={episode.guid}
+            className="bg-yellow text-black border border-solid border-black hover:bg-black hover:text-yellow dark:bg-black dark:text-yellow dark:hover:bg-yellow dark:hover:text-black dark:border-yellow"
+          >
+            <div className="w-100 h-100 overflow-hidden">
               <img
                 src={episode.itunes.image}
                 alt={episode.title}
                 className="w-full h-full object-cover"
               />
             </div>
-            <h3 className="text-xl font-semibold">{episode.title}</h3>
-            <audio controls className="w-full mt-4">
-              <source src={episode.enclosure.url} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
+            <div className="p-4">
+              <h3 className="text-lg">{episode.title}</h3>
+              <audio controls className="w-full mt-4">
+                <source src={episode.enclosure.url} type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
           </div>
         ))}
       </div>
