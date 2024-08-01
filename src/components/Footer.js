@@ -46,36 +46,39 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-yellow border-t-black border-t-[1px] text-black dark:bg-black dark:border-t-yellow dark:border-t-[1px] dark:text-yellow p-6 mt-8">
+    <footer className="border-t-black border-t-[1px] text-black dark:border-t-yellow dark:border-t-[1px] dark:text-yellow p-6 mt-8">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="flex items-center mt-16 mb-16 md:mt-0 md:mb-0">
+        <div className="flex items-center mt-8 mb-16 md:mt-0 md:mb-0">
           <Link href="/">
             <div className="logo-icon"></div>
           </Link>
         </div>
         <div className="flex flex-col text-center md:flex-row md:items-center space-y-5 md:space-y-0 md:space-x-8 mb-4 md:mb-0">
-          <Link href="/about" className="text-lg hover:underline md:text-base">
+          <Link href="/about" className="text-2xl hover:underline md:text-base">
             About
           </Link>
           <Link
             href="/podcast"
-            className="text-lg hover:underline md:text-base"
+            className="text-2xl hover:underline md:text-base"
           >
             Podcast
           </Link>
           <Link
             href="/timeline"
-            className="text-lg hover:underline md:text-base"
+            className="text-2xl hover:underline md:text-base"
           >
             Timeline
           </Link>
           <Link
             href="/collabs"
-            className="text-lg hover:underline md:text-base"
+            className="text-2xl hover:underline md:text-base"
           >
             Colabos
           </Link>
-          <button onClick={toggleTheme} className="ml-4 focus:outline-none">
+          <button
+            onClick={toggleTheme}
+            className="ml-0 pt-8 focus:outline-none md:ml-4 md:pt-0"
+          >
             {theme === "dark" ? (
               <FontAwesomeIcon
                 icon={faSun}
