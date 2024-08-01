@@ -10,7 +10,7 @@ export default function Timeline() {
     async function fetchEvents() {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/timeline-events`,
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/timeline-events`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
@@ -27,6 +27,10 @@ export default function Timeline() {
               .map((desc) => desc.children.map((child) => child.text).join(" "))
               .join("\n"),
           }));
+
+          const sortedEvents = formattedEvents.sort(
+            (a, b) => new Date(a.date) - new Date(b.date)
+          );
           setEvents(formattedEvents);
         } else {
           setError("Failed to fetch events");
