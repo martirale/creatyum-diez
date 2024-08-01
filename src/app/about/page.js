@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { FormatContent } from "@/components/FormatContent";
 
 export default function AboutPage() {
   const [aboutContent, setAboutContent] = useState([]);
@@ -31,86 +32,7 @@ export default function AboutPage() {
           const dataAbout = await resAbout.json();
           const dataMission = await resMission.json();
 
-          const formatText = (children) => {
-            return children.map((child, index) => {
-              if (child.type === "text") {
-                let text = child.text;
-                if (child.bold) text = <b key={index}>{text}</b>;
-                if (child.italic) text = <em key={index}>{text}</em>;
-                return text;
-              }
-              if (child.type === "link") {
-                return (
-                  <a
-                    href={child.url}
-                    key={index}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                  >
-                    {formatText(child.children)}
-                  </a>
-                );
-              }
-              return null;
-            });
-          };
-
-          const formattedAbout = dataAbout.data.attributes.about.map(
-            (block, index) => {
-              if (block.type === "paragraph") {
-                return (
-                  <p key={index} className="mb-4">
-                    {formatText(block.children)}
-                  </p>
-                );
-              }
-              if (block.type === "image") {
-                return (
-                  <img
-                    key={index}
-                    src={block.image.url}
-                    alt={block.image.alternativeText || ""}
-                    className="my-4 max-w-full h-auto"
-                  />
-                );
-              }
-              if (block.type === "heading") {
-                const HeadingTag = `h${block.level}`;
-                return (
-                  <HeadingTag key={index} className="text-2xl my-4 md:text-3xl">
-                    {formatText(block.children)}
-                  </HeadingTag>
-                );
-              }
-              if (block.type === "quote") {
-                return (
-                  <blockquote
-                    key={index}
-                    className="border-l-4 border-black italic pl-4 my-4"
-                  >
-                    {formatText(block.children)}
-                  </blockquote>
-                );
-              }
-              if (block.type === "list") {
-                const ListTag = block.format === "ordered" ? "ol" : "ul";
-                const listClass =
-                  block.format === "ordered"
-                    ? "list-decimal pl-6"
-                    : "list-disc pl-6";
-                return (
-                  <ListTag key={index} className={listClass}>
-                    {block.children.map((item, itemIndex) => (
-                      <li key={itemIndex}>{formatText(item.children)}</li>
-                    ))}
-                  </ListTag>
-                );
-              }
-              return null;
-            }
-          );
-
+          const formattedAbout = FormatContent(dataAbout.data.attributes.about);
           const formattedMission = <p>{dataMission.data.attributes.mission}</p>;
 
           setAboutContent(formattedAbout);
