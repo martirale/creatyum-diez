@@ -16,7 +16,11 @@ module.exports = {
       Roboto: ["var(--font-roboto)"],
       SpaceMono: ["var(--font-spacemono)"],
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        base: "18px",
+      },
+    },
   },
   plugins: [],
 };
