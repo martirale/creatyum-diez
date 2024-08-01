@@ -39,9 +39,7 @@ export default function About() {
             )
           );
 
-          const formattedMission = (
-            <p className="mb-4">{dataMission.data.attributes.mission}</p>
-          );
+          const formattedMission = <p>{dataMission.data.attributes.mission}</p>;
 
           setAboutContent(formattedAbout);
           setMissionContent(formattedMission);
@@ -67,18 +65,22 @@ export default function About() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-8 py-8 md:px-0">
       <h1>Sobre Creatyum</h1>
 
-      <div className="grid grid-cols-12 gap-4">
+      <div className="grid grid-cols-12 gap-4 md:gap-8">
         <div className="col-span-12 md:col-span-9">
+          <h2 className="text-4xl pb-8 md:text-5xl">Sobre Creatyum</h2>
           {aboutContent.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </div>
 
         <div className="col-span-12 md:col-span-3">
-          <p>{missionContent}</p>
+          <div className="border border-solid border-black p-8 dark:border-yellow">
+            <h2 className="text-3xl mb-4">Misión</h2>
+            {missionContent}
+          </div>
         </div>
       </div>
     </div>
