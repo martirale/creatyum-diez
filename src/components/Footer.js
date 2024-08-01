@@ -91,13 +91,12 @@ export default function Footer() {
         </div>
         <div className="text-xs p-12 text-center md:flex md:items-center md:p-0">
           <p>
-            &copy; COPYRIGHT 2024{" "}
             <a
               href="https://alemartir.com"
               target="_blank"
               className="hover:underline"
             >
-              AM
+              &copy; COPYRIGHT 2024 AM
             </a>
           </p>
         </div>
