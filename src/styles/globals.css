@@ -18,6 +18,12 @@ html {
   font-size: 18px;
 }
 
+.custom-vh {
+  min-height: 100vh;
+  display: grid;
+  align-content: space-between;
+}
+
 /* HEADERS */
 h1,
 h2,
