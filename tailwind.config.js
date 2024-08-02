@@ -14,7 +14,13 @@ module.exports = {
     },
     fontFamily: {
       Roboto: ["var(--font-roboto)"],
-      SpaceMono: ["var(--font-spacemono)"],
+      BricolageGrotesque: ["var(--font-bricolagegrotesque)"],
+    },
+    fontWeight: {
+      light: "200",
+      normal: "300",
+      bold: "500",
+      extrabold: "800",
     },
     extend: {
       fontSize: {

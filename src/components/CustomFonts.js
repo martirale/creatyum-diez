@@ -1,10 +1,5 @@
 import localFont from "next/font/local";
 
-const SpaceMono = localFont({
-  src: [{ path: "../../public/fonts/spacemono-bolditalic.woff2" }],
-  variable: "--font-spacemono",
-});
-
 const Roboto = localFont({
   src: [
     {
@@ -31,4 +26,20 @@ const Roboto = localFont({
   variable: "--font-roboto",
 });
 
-export { Roboto, SpaceMono };
+const BricolageGrotesque = localFont({
+  src: [
+    {
+      path: "../../public/fonts/bricolagegrotesque-extralight.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/bricolagegrotesque-extrabold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-bricolagegrotesque",
+});
+
+export { Roboto, BricolageGrotesque };

@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { Roboto, SpaceMono } from "@/components/CustomFonts";
+import { Roboto, BricolageGrotesque } from "@/components/CustomFonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body
-        className={`${Roboto.variable} ${SpaceMono.variable} font-Roboto font-light bg-yellow text-black dark:bg-black dark:text-yellow custom-vh`}
+        className={`${Roboto.variable} ${BricolageGrotesque.variable} font-Roboto font-light bg-yellow text-black dark:bg-black dark:text-yellow custom-vh`}
       >
         <Header />
 

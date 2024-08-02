@@ -31,7 +31,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-spacemono);
+  font-family: var(--font-bricolagegrotesque);
+  line-height: 1 !important;
 }
 
 h1 {
