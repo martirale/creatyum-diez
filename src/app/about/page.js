@@ -62,7 +62,7 @@ export default function AboutPage() {
     <div className="container mx-auto px-8 py-8 md:px-0">
       <h1>Sobre Creatyum</h1>
 
-      <div className="grid grid-cols-12 gap-4 md:gap-8">
+      <div className="grid grid-cols-12 gap-4 md:gap-12">
         <div className="col-span-12 md:col-span-9">
           <h2 className="font-extrabold text-7xl pb-16 md:text-9xl">
             Sobre Creatyum
