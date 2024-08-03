@@ -53,7 +53,7 @@ export default function Footer() {
             <div className="logo-icon"></div>
           </Link>
         </div>
-        <div className="flex flex-col text-center md:flex-row md:items-center space-y-5 md:space-y-0 md:space-x-8 mb-4 md:mb-0">
+        <div className="flex flex-col text-center font-BricolageGrotesque font-extrabold md:flex-row md:items-center md:font-Roboto md:font-normal space-y-5 md:space-y-0 md:space-x-8 mb-4 md:mb-0">
           <Link href="/about" className="text-2xl hover:underline md:text-base">
             About
           </Link>
