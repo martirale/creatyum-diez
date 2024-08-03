@@ -48,9 +48,9 @@ const PodcastPlayer = () => {
           </div>
           <div className="col-span-12 md:col-span-6">
             <div className="p-4 md:p-10">
-              <h2 className="text-3xl md:text-9xl md:font-extrabold">
+              <h3 className="text-3xl md:text-9xl md:font-extrabold">
                 {latestEpisode.title}
-              </h2>
+              </h3>
               <audio controls className="w-full mt-4">
                 <source src={latestEpisode.enclosure.url} type="audio/mpeg" />
                 Your browser does not support the audio element.
@@ -75,7 +75,7 @@ const PodcastPlayer = () => {
               />
             </div>
             <div className="p-4">
-              <h2 className="text-3xl">{episode.title}</h2>
+              <h3 className="text-3xl">{episode.title}</h3>
               <audio controls className="w-full mt-4">
                 <source src={episode.enclosure.url} type="audio/mpeg" />
                 Your browser does not support the audio element.
