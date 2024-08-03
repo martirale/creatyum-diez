@@ -58,16 +58,16 @@ export default function Footer() {
             About
           </Link>
           <Link
-            href="/podcast"
-            className="text-5xl hover:underline md:text-base"
-          >
-            Podcast
-          </Link>
-          <Link
             href="/timeline"
             className="text-5xl hover:underline md:text-base"
           >
             Timeline
+          </Link>
+          <Link
+            href="/podcast"
+            className="text-5xl hover:underline md:text-base"
+          >
+            Podcast
           </Link>
           <Link
             href="/collabs"
