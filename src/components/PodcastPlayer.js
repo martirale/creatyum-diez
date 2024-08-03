@@ -33,10 +33,10 @@ const PodcastPlayer = () => {
   }, []);
 
   return (
-    <section className="container mx-auto px-8 py-8 md:px-0">
+    <div className="container mx-auto px-8 py-8 md:px-0">
       {latestEpisode && (
-        <div className="mb-8">
-          <div className="bg-yellow text-black border border-solid border-black hover:bg-black hover:text-yellow dark:bg-black dark:text-yellow dark:hover:bg-yellow dark:hover:text-black dark:border-yellow">
+        <div className="grid grid-cols-12 items-center border border-solid border-black bg-black text-yellow dark:border-yellow dark:bg-yellow dark:text-black">
+          <div className="col-span-12 md:col-span-6">
             <div className="w-100 h-100 overflow-hidden">
               <img
                 src={latestEpisode.itunes.image}
@@ -44,8 +44,12 @@ const PodcastPlayer = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="p-4">
-              <h3 className="text-lg">{latestEpisode.title}</h3>
+          </div>
+          <div className="col-span-12 md:col-span-6">
+            <div className="p-4 md:p-10">
+              <h2 className="font-extrabold text-3xl md:text-9xl">
+                {latestEpisode.title}
+              </h2>
               <audio controls className="w-full mt-4">
                 <source src={latestEpisode.enclosure.url} type="audio/mpeg" />
                 Your browser does not support the audio element.
@@ -54,31 +58,7 @@ const PodcastPlayer = () => {
           </div>
         </div>
       )}
-
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {otherEpisodes.map((episode) => (
-          <div
-            key={episode.guid}
-            className="bg-yellow text-black border border-solid border-black hover:bg-black hover:text-yellow dark:bg-black dark:text-yellow dark:hover:bg-yellow dark:hover:text-black dark:border-yellow"
-          >
-            <div className="w-100 h-100 overflow-hidden">
-              <img
-                src={episode.itunes.image}
-                alt={episode.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <h3 className="text-lg">{episode.title}</h3>
-              <audio controls className="w-full mt-4">
-                <source src={episode.enclosure.url} type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+    </div>
   );
 };
 
