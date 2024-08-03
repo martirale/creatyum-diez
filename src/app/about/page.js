@@ -64,7 +64,7 @@ export default function AboutPage() {
 
       <div className="grid grid-cols-12 gap-4 md:gap-8">
         <div className="col-span-12 md:col-span-9">
-          <h2 className="font-extrabold text-5xl pb-8 md:text-7xl">
+          <h2 className="font-extrabold text-7xl pb-8 md:text-9xl">
             Sobre Creatyum
           </h2>
           {aboutContent.map((paragraph, index) => (
@@ -74,7 +74,7 @@ export default function AboutPage() {
 
         <div className="col-span-12 md:col-span-3">
           <div className="border border-solid border-black p-8 dark:border-yellow">
-            <h3 className="font-extrabold text-3xl mb-4">Misión</h3>
+            <h3 className="font-extrabold text-4xl mb-4 md:text-5xl">Misión</h3>
             {missionContent}
           </div>
         </div>

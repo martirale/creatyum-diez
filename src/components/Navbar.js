@@ -42,19 +42,19 @@ export default function Navbar() {
         <div className={getMenuClasses()}>
           <Link
             href="/"
-            className="font-BricolageGrotesque text-3xl mx-2 hover:underline md:pl-4"
+            className="font-BricolageGrotesque text-5xl mx-2 hover:underline md:pl-4"
           >
             Inicio
           </Link>
           <Link
             href="/podcast"
-            className="font-BricolageGrotesque text-3xl mx-2 hover:underline md:pl-4"
+            className="font-BricolageGrotesque text-5xl mx-2 hover:underline md:pl-4"
           >
             Podcast
           </Link>
           <Link
             href="/timeline"
-            className="font-BricolageGrotesque text-3xl mx-2 hover:underline md:pl-4"
+            className="font-BricolageGrotesque text-5xl mx-2 hover:underline md:pl-4"
           >
             Timeline
           </Link>

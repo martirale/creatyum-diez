@@ -54,24 +54,24 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex flex-col text-center font-BricolageGrotesque font-extrabold md:flex-row md:items-center md:font-Roboto md:font-normal space-y-5 md:space-y-0 md:space-x-8 mb-4 md:mb-0">
-          <Link href="/about" className="text-3xl hover:underline md:text-base">
+          <Link href="/about" className="text-5xl hover:underline md:text-base">
             About
           </Link>
           <Link
             href="/podcast"
-            className="text-3xl hover:underline md:text-base"
+            className="text-5xl hover:underline md:text-base"
           >
             Podcast
           </Link>
           <Link
             href="/timeline"
-            className="text-3xl hover:underline md:text-base"
+            className="text-5xl hover:underline md:text-base"
           >
             Timeline
           </Link>
           <Link
             href="/collabs"
-            className="text-3xl hover:underline md:text-base"
+            className="text-5xl hover:underline md:text-base"
           >
             Colabos
           </Link>
