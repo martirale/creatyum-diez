@@ -69,12 +69,6 @@ export default function Footer() {
           >
             Podcast
           </Link>
-          <Link
-            href="/collabs"
-            className="text-5xl hover:underline md:text-base"
-          >
-            Colabos
-          </Link>
           <button
             onClick={toggleTheme}
             className="ml-0 pt-8 focus:outline-none md:ml-4 md:pt-0"
