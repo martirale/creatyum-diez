@@ -69,22 +69,33 @@ export default function Footer() {
           >
             Podcast
           </Link>
-          <button
-            onClick={toggleTheme}
-            className="ml-0 pt-8 focus:outline-none md:ml-4 md:pt-0"
-          >
-            {theme === "dark" ? (
-              <FontAwesomeIcon
-                icon={faSun}
-                className="text-yellow text-2xl md:text-base"
-              />
-            ) : (
-              <FontAwesomeIcon
-                icon={faMoon}
-                className="text-black text-2xl md:text-base"
-              />
-            )}
-          </button>
+          <div className="pt-12 md:pt-0">
+            <Link
+              href="/privacy"
+              className="text-2xl mr-4 hover:underline md:text-base md:mr-8"
+            >
+              Privacidad
+            </Link>
+            <Link
+              href="/terms"
+              className="text-2xl mr-4 hover:underline md:text-base md:mr-8"
+            >
+              Términos
+            </Link>
+            <button onClick={toggleTheme} className="focus:outline-none">
+              {theme === "dark" ? (
+                <FontAwesomeIcon
+                  icon={faSun}
+                  className="text-yellow text-2xl md:text-base"
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faMoon}
+                  className="text-black text-2xl md:text-base"
+                />
+              )}
+            </button>
+          </div>
         </div>
         <div className="text-xs p-12 text-center md:flex md:items-center md:p-0">
           <p>
