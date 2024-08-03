@@ -62,7 +62,7 @@ export default function Timeline() {
       <div className="grid gap-4 mx-5 sm:grid-cols-12 md:mx-0">
         <div className="col-span-12 sm:col-span-3">
           <div className="text-center mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:text-left sm:before:mx-0">
-            <h3 className="text-5xl font-extrabold">Creatyum</h3>
+            <h3 className="text-6xl font-extrabold">Creatyum</h3>
             <span className="text-sm font-bold uppercase">en el tiempo...</span>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function Timeline() {
                 key={event.id}
                 className="flex flex-col relative before:absolute before:top-2 before:w-4 before:h-4 before:rounded-full before:left-[-39px] before:z-[1] before:bg-black before:dark:bg-yellow"
               >
-                <h3 className="text-3xl font-extrabold mb-2">{event.title}</h3>
+                <h3 className="text-4xl font-extrabold mb-2">{event.title}</h3>
                 <time className="text-xs uppercase">
                   {new Date(event.date).toLocaleDateString("es-ES", {
                     year: "numeric",
