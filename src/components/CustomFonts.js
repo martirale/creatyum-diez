@@ -29,12 +29,12 @@ const Roboto = localFont({
 const BricolageGrotesque = localFont({
   src: [
     {
-      path: "../../public/fonts/bricolagegrotesque-extralight.woff2",
+      path: "../../public/fonts/bricolagegrotesque-condextralight.woff2",
       weight: "200",
       style: "normal",
     },
     {
-      path: "../../public/fonts/bricolagegrotesque-extrabold.woff2",
+      path: "../../public/fonts/bricolagegrotesque-condextrabold.woff2",
       weight: "800",
       style: "normal",
     },
