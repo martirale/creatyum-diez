@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Creatyum Media",
+  title: "Creatyum Archive",
   description: "Revista digital para diseñadores y creativos en Latam.",
 };
 
