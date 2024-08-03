@@ -82,17 +82,15 @@ export default function Footer() {
             >
               Términos
             </Link>
-            <button onClick={toggleTheme} className="focus:outline-none">
+            <button
+              onClick={toggleTheme}
+              className="text-2xl focus:outline-none md:text-base"
+            >
+              <span className="mr-2">Modo</span>
               {theme === "dark" ? (
-                <FontAwesomeIcon
-                  icon={faSun}
-                  className="text-yellow text-2xl md:text-base"
-                />
+                <FontAwesomeIcon icon={faSun} className="text-yellow" />
               ) : (
-                <FontAwesomeIcon
-                  icon={faMoon}
-                  className="text-black text-2xl md:text-base"
-                />
+                <FontAwesomeIcon icon={faMoon} className="text-black" />
               )}
             </button>
           </div>
