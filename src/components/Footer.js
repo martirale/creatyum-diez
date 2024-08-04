@@ -86,7 +86,7 @@ export default function Footer() {
               onClick={toggleTheme}
               className="text-2xl focus:outline-none md:text-base"
             >
-              <span className="mr-2">Modo</span>
+              <span className="mr-2 hover:underline">Modo</span>
               {theme === "dark" ? (
                 <FontAwesomeIcon icon={faSun} className="text-yellow" />
               ) : (
