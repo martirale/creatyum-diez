@@ -88,9 +88,15 @@ export default function Footer() {
             >
               <span className="mr-2 hover:underline">Modo</span>
               {theme === "dark" ? (
-                <FontAwesomeIcon icon={faSun} className="text-yellow" />
+                <FontAwesomeIcon
+                  icon={faSun}
+                  className="text-yellow w-6 h-6 md:w-4 md:h-4"
+                />
               ) : (
-                <FontAwesomeIcon icon={faMoon} className="text-black" />
+                <FontAwesomeIcon
+                  icon={faMoon}
+                  className="text-black w-6 h-6 md:w-4 md:h-4"
+                />
               )}
             </button>
           </div>
