@@ -11,7 +11,7 @@ export default function Terms() {
     async function fetchData() {
       try {
         const resTerms = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/terms-of-use`,
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/terms-of-use`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,

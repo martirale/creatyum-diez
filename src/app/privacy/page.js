@@ -11,7 +11,7 @@ export default function Privacy() {
     async function fetchData() {
       try {
         const resPrivacy = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/privacy`,
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/privacy`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,

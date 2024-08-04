@@ -10,7 +10,7 @@ export default function Timeline() {
     async function fetchEvents() {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/timeline-events`,
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/timeline-events`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,

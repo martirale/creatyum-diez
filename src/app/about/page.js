@@ -12,7 +12,7 @@ export default function AboutPage() {
     async function fetchData() {
       try {
         const resAbout = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/about`,
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/about`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
@@ -20,7 +20,7 @@ export default function AboutPage() {
           }
         );
         const resMission = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/mission`,
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/mission`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
