@@ -45,7 +45,7 @@ export function FormatContent(blocks) {
     if (block.type === "heading") {
       const HeadingTag = `h${block.level}`;
       return (
-        <HeadingTag key={index} className="text-2xl my-4 md:text-3xl">
+        <HeadingTag key={index} className="text-4xl font-extrabold mt-12 mb-4">
           {formatText(block.children)}
         </HeadingTag>
       );
