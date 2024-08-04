@@ -1,3 +1,12 @@
+const headingClasses = {
+  1: "text-7xl",
+  2: "text-5xl",
+  3: "text-4xl",
+  4: "text-3xl",
+  5: "text-2xl",
+  6: "text-xl",
+};
+
 export function FormatContent(blocks) {
   const formatText = (children) => {
     return children.map((child, index) => {
@@ -44,8 +53,12 @@ export function FormatContent(blocks) {
     }
     if (block.type === "heading") {
       const HeadingTag = `h${block.level}`;
+      const headingClass = headingClasses[block.level] || "text-xl";
       return (
-        <HeadingTag key={index} className="text-4xl font-extrabold mt-12 mb-4">
+        <HeadingTag
+          key={index}
+          className={`${headingClass} font-extrabold mt-12 mb-4`}
+        >
           {formatText(block.children)}
         </HeadingTag>
       );
