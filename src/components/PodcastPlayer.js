@@ -1,5 +1,7 @@
 "use client";
 
+import { faCalendarDay } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import Parser from "rss-parser";
 
@@ -32,6 +34,15 @@ const PodcastPlayer = () => {
     fetchEpisodes();
   }, []);
 
+  const formatDate = (dateString) => {
+    const options = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+    return new Date(dateString).toLocaleDateString("es-ES", options);
+  };
+
   return (
     <div className="container mx-auto px-8 py-8 md:px-0">
       {latestEpisode && (
@@ -48,12 +59,18 @@ const PodcastPlayer = () => {
           </div>
           <div className="col-span-12 md:col-span-6">
             <div className="p-4 md:p-10">
-              <h3 className="text-3xl md:text-9xl md:font-extrabold">
+              <h3 className="text-3xl font-extrabold mb-2 md:text-9xl">
                 {latestEpisode.title}
               </h3>
+              <p className="text-lg md:text-xl">
+                <span className="mr-2">
+                  <FontAwesomeIcon icon={faCalendarDay} />
+                </span>
+                {formatDate(latestEpisode.pubDate)}
+              </p>
               <audio controls className="w-full mt-4">
                 <source src={latestEpisode.enclosure.url} type="audio/mpeg" />
-                Your browser does not support the audio element.
+                Tu navegador no soporta el elemento de audio.
               </audio>
             </div>
           </div>
@@ -75,10 +92,16 @@ const PodcastPlayer = () => {
               />
             </div>
             <div className="p-4">
-              <h3 className="text-3xl">{episode.title}</h3>
+              <h3 className="text-3xl font-extrabold mb-2">{episode.title}</h3>
+              <p className="text-lg">
+                <span className="mr-2">
+                  <FontAwesomeIcon icon={faCalendarDay} />
+                </span>
+                {formatDate(episode.pubDate)}
+              </p>
               <audio controls className="w-full mt-4">
                 <source src={episode.enclosure.url} type="audio/mpeg" />
-                Your browser does not support the audio element.
+                Tu navegador no soporta el elemento de audio.
               </audio>
             </div>
           </div>
