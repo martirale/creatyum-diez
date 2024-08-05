@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import FormatContent from "@/components/FormatContent";
+import FormatContent from "../../components/FormatContent";
 
 const TermsPage = () => {
   const [content, setContent] = useState([]);

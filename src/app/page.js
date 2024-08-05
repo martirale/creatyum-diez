@@ -1,4 +1,4 @@
-import HeroAniversary from "@/components/HeroAniversary.js";
+import HeroAniversary from "../components/HeroAniversary.js";
 
 export const metadata = {
   title: "Creatyum Archive",

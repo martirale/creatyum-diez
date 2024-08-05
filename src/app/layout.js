@@ -1,7 +1,7 @@
-import "@/styles/globals.css";
-import { Roboto, BricolageGrotesque } from "@/components/CustomFonts";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import "../styles/globals.css";
+import { Roboto, BricolageGrotesque } from "../components/CustomFonts";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default function RootLayout({ children }) {
