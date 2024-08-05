@@ -2,6 +2,11 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
+export const metadata = {
+  title: "404 Not Found - Creatyum Archive",
+  description: "Revista digital para diseñadores y creativos en Latam.",
+};
+
 export default function NotFound() {
   return (
     <div className="container mx-auto px-8 py-8 md:px-0">
