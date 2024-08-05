@@ -10,3 +10,7 @@
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 
 </div>
+
+# About
+
+Creatyum es una revista digital de divulgación sobre diseño e industria creativa en formato de blog y podcast creado por [Alejandro Mártir](https://alemartir.com). Este proyecto es para el micro-sitio realizado para el "archivo" con lo más destacado en la historia de este proyecto de divulgación y de diseño.
