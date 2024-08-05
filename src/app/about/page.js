@@ -5,12 +5,13 @@ import FormatContent from "@/components/FormatContent";
 
 const AboutPage = () => {
   const [content, setContent] = useState([]);
+  const [mission, setMission] = useState("");
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchAboutContent = async () => {
       try {
-        const res = await fetch(
+        const resContent = await fetch(
           `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/about`,
           {
             headers: {
@@ -19,13 +20,39 @@ const AboutPage = () => {
           }
         );
 
-        if (!res.ok) {
-          console.error("Failed to fetch data:", res.status, res.statusText);
-          throw new Error("Failed to fetch data");
+        if (!resContent.ok) {
+          console.error(
+            "Failed to fetch content:",
+            resContent.status,
+            resContent.statusText
+          );
+          throw new Error("Failed to fetch content");
         }
 
-        const data = await res.json();
-        setContent(data.data.attributes.content);
+        const dataContent = await resContent.json();
+        setContent(dataContent.data.attributes.content);
+
+        // Fetch Mission
+        const resMission = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/mission`,
+          {
+            headers: {
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
+            },
+          }
+        );
+
+        if (!resMission.ok) {
+          console.error(
+            "Failed to fetch sidebar content:",
+            resMission.status,
+            resMission.statusText
+          );
+          throw new Error("Failed to fetch sidebar content");
+        }
+
+        const dataMission = await resMission.json();
+        setMission(dataMission.data.attributes.content);
       } catch (error) {
         console.error("Error fetching data:", error);
         setError(error);
@@ -59,6 +86,7 @@ const AboutPage = () => {
         <div className="col-span-12 md:col-span-4">
           <div className="border border-solid border-black p-8 dark:border-yellow">
             <h3 className="font-extrabold text-5xl mb-4">Misión</h3>
+            {mission}
           </div>
         </div>
       </div>
