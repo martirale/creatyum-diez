@@ -3,11 +3,6 @@ import { Roboto, BricolageGrotesque } from "@/components/CustomFonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "Creatyum Archive",
-  description: "Revista digital para diseñadores y creativos en Latam.",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
