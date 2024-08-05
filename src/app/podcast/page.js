@@ -1,4 +1,4 @@
-import PageContent from "./PageContent";
+import PodcastPageContent from "./PodcastPageContent";
 
 export const metadata = {
   title: "Café Creativo Podcast - Creatyum Archive",
@@ -10,7 +10,7 @@ export default function Podcast() {
     <div>
       <h1>Café Creativo Podcast</h1>
 
-      <PageContent />
+      <PodcastPageContent />
     </div>
   );
 }

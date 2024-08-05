@@ -1,4 +1,4 @@
-import PageContent from "./PageContent";
+import AboutPageContent from "./AboutPageContent";
 
 export const metadata = {
   title: "Sobre Creatyum - Creatyum Archive",
@@ -10,7 +10,7 @@ export default function Home() {
     <div className="container mx-auto px-8 py-8 md:px-0">
       <h1>Sobre Creatyum</h1>
 
-      <PageContent />
+      <AboutPageContent />
     </div>
   );
 }

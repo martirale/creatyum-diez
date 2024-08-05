@@ -1,4 +1,4 @@
-import PageContent from "./PageContent";
+import TimelinePageContent from "./TimelinePageContent";
 
 export const metadata = {
   title: "Timeline - Creatyum Archive",
@@ -10,7 +10,7 @@ export default function Collabs() {
     <div>
       <h1>Timeline</h1>
 
-      <PageContent />
+      <TimelinePageContent />
     </div>
   );
 }

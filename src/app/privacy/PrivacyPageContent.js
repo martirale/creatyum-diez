@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import FormatContent from "../../components/FormatContent";
 
-const TermsPage = () => {
+const PrivacyPageContent = () => {
   const [content, setContent] = useState([]);
   const [error, setError] = useState(null);
 
@@ -11,7 +11,7 @@ const TermsPage = () => {
     const fetchPrivacyContent = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/terms-of-use`,
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/privacy`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
@@ -47,11 +47,11 @@ const TermsPage = () => {
   return (
     <div>
       <h2 className="font-extrabold text-5xl pb-16 md:text-7xl">
-        Términos de uso
+        Política de privacidad
       </h2>
       <FormatContent blocks={content} />
     </div>
   );
 };
 
-export default TermsPage;
+export default PrivacyPageContent;

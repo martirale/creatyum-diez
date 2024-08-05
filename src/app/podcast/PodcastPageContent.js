@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import Parser from "rss-parser";
 
-const PodcastPlayer = () => {
+const PodcastPageContent = () => {
   const [latestEpisode, setLatestEpisode] = useState(null);
   const [otherEpisodes, setOtherEpisodes] = useState([]);
   const keyword = "#Creatyum10";
@@ -111,4 +111,4 @@ const PodcastPlayer = () => {
   );
 };
 
-export default PodcastPlayer;
+export default PodcastPageContent;
