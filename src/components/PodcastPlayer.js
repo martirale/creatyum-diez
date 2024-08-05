@@ -6,7 +6,7 @@ import Parser from "rss-parser";
 const PodcastPlayer = () => {
   const [latestEpisode, setLatestEpisode] = useState(null);
   const [otherEpisodes, setOtherEpisodes] = useState([]);
-  const keyword = "Negociación";
+  const keyword = "#Creatyum10";
   const rssUrl = "https://anchor.fm/s/a59b2a8/podcast/rss";
 
   useEffect(() => {
