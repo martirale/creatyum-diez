@@ -1,16 +1,16 @@
 "use client";
-import { useState, useEffect } from "react";
-import { FormatContent } from "@/components/FormatContent";
 
-export default function Privacy() {
-  const [privacyContent, setPrivacyContent] = useState([]);
-  const [loading, setLoading] = useState(true);
+import { useState, useEffect } from "react";
+import FormatContent from "@/components/FormatContent";
+
+const PrivacyPage = () => {
+  const [content, setContent] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchPrivacyContent = async () => {
       try {
-        const resPrivacy = await fetch(
+        const res = await fetch(
           `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/privacy`,
           {
             headers: {
@@ -19,33 +19,29 @@ export default function Privacy() {
           }
         );
 
-        if (resPrivacy.ok) {
-          const dataPrivacy = await resPrivacy.json();
-
-          const formattedPrivacy = FormatContent(
-            dataPrivacy.data.attributes.privacy
-          );
-
-          setPrivacyContent(formattedPrivacy);
-        } else {
-          setError("Failed to fetch data");
+        if (!res.ok) {
+          console.error("Failed to fetch data:", res.status, res.statusText);
+          throw new Error("Failed to fetch data");
         }
-      } catch (error) {
-        setError("Error fetching data");
-      } finally {
-        setLoading(false);
-      }
-    }
 
-    fetchData();
+        const data = await res.json();
+        setContent(data.data.attributes.content);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setError(error);
+      }
+    };
+
+    fetchPrivacyContent();
   }, []);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <div>
+        <h1>Error fetching data</h1>
+        <p>{error.message}</p>
+      </div>
+    );
   }
 
   return (
@@ -53,15 +49,15 @@ export default function Privacy() {
       <h1>Política de privacidad</h1>
 
       <div className="grid grid-cols-12 gap-4 md:gap-12">
-        <div className="col-span-12 md:col-span-9">
-          <h2 className="font-extrabold text-5xl pb-16 md:text-6xl">
+        <div className="col-span-12 md:col-span-8">
+          <h2 className="font-extrabold text-5xl pb-16 md:text-7xl">
             Política de privacidad
           </h2>
-          {privacyContent.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+          <FormatContent blocks={content} />
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default PrivacyPage;

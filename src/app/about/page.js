@@ -1,17 +1,16 @@
 "use client";
-import { useState, useEffect } from "react";
-import { FormatContent } from "@/components/FormatContent";
 
-export default function AboutPage() {
-  const [aboutContent, setAboutContent] = useState([]);
-  const [missionContent, setMissionContent] = useState("");
-  const [loading, setLoading] = useState(true);
+import { useState, useEffect } from "react";
+import FormatContent from "@/components/FormatContent";
+
+const AboutPage = () => {
+  const [content, setContent] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchAboutContent = async () => {
       try {
-        const resAbout = await fetch(
+        const res = await fetch(
           `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/about`,
           {
             headers: {
@@ -19,43 +18,30 @@ export default function AboutPage() {
             },
           }
         );
-        const resMission = await fetch(
-          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/mission`,
-          {
-            headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
-            },
-          }
-        );
 
-        if (resAbout.ok && resMission.ok) {
-          const dataAbout = await resAbout.json();
-          const dataMission = await resMission.json();
-
-          const formattedAbout = FormatContent(dataAbout.data.attributes.about);
-          const formattedMission = <p>{dataMission.data.attributes.mission}</p>;
-
-          setAboutContent(formattedAbout);
-          setMissionContent(formattedMission);
-        } else {
-          setError("Failed to fetch data");
+        if (!res.ok) {
+          console.error("Failed to fetch data:", res.status, res.statusText);
+          throw new Error("Failed to fetch data");
         }
-      } catch (error) {
-        setError("Error fetching data");
-      } finally {
-        setLoading(false);
-      }
-    }
 
-    fetchData();
+        const data = await res.json();
+        setContent(data.data.attributes.content);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setError(error);
+      }
+    };
+
+    fetchAboutContent();
   }, []);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <div>
+        <h1>Error fetching data</h1>
+        <p>{error.message}</p>
+      </div>
+    );
   }
 
   return (
@@ -63,22 +49,21 @@ export default function AboutPage() {
       <h1>Sobre Creatyum</h1>
 
       <div className="grid grid-cols-12 gap-4 md:gap-12">
-        <div className="col-span-12 md:col-span-9">
+        <div className="col-span-12 md:col-span-8">
           <h2 className="font-extrabold text-7xl pb-16 md:text-9xl">
             Sobre Creatyum
           </h2>
-          {aboutContent.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+          <FormatContent blocks={content} />
         </div>
 
-        <div className="col-span-12 md:col-span-3">
+        <div className="col-span-12 md:col-span-4">
           <div className="border border-solid border-black p-8 dark:border-yellow">
             <h3 className="font-extrabold text-5xl mb-4">Misión</h3>
-            {missionContent}
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default AboutPage;
