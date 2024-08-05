@@ -7,7 +7,7 @@ const headingClasses = {
   6: "text-xl",
 };
 
-export function FormatContent(blocks) {
+export function FormatContent({ blocks }) {
   const formatText = (children) => {
     return children.map((child, index) => {
       if (child.type === "text") {
@@ -43,12 +43,18 @@ export function FormatContent(blocks) {
     }
     if (block.type === "image") {
       return (
-        <img
-          key={index}
-          src={block.image.url}
-          alt={block.image.alternativeText || ""}
-          className="my-4 max-w-full h-auto"
-        />
+        <figure key={index} className="my-4">
+          <img
+            src={block.image.url}
+            alt={block.image.alternativeText || ""}
+            className="w-full h-auto mb-2"
+          />
+          {block.image.caption && (
+            <figcaption className="text-xs text-center text-black dark:text-yellow">
+              {block.image.caption}
+            </figcaption>
+          )}
+        </figure>
       );
     }
     if (block.type === "heading") {
@@ -88,3 +94,5 @@ export function FormatContent(blocks) {
     return null;
   });
 }
+
+export default FormatContent;
